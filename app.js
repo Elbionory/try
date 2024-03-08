@@ -1,5 +1,7 @@
-import moment from 'moment'; // require
-console.log(moment().format('dddd'));
+
+
+
+
 
 const inputTask = document.querySelector(".input-task");
 const AddBtn = document.querySelector("#add");
@@ -9,7 +11,7 @@ const clearcomplete = document.querySelector(".clearcomplete")
 const footer = document.querySelector(".footer");
 const edit = document.querySelector(".edit")
 const edit_input = document.querySelector(".edit input");
-// const btn_save = document.querySelector(".edit button");
+const btn_save = document.querySelector(".edit button");
 const gray = document.querySelector(".gray")
 const arrTasks = [];
 
@@ -99,8 +101,9 @@ document.addEventListener("click", (e) => {
 
 // Attach click event listener to btn_save
 edit_input.addEventListener("change", () => {
-
+    deletefromlocalstorage(taskobj.tartgetTask.parentElement)
     taskobj.tartgetTask.textContent = edit_input.value;
+    saveTodoLocalstorage(edit_input.value)
 })
 btn_save.addEventListener('click', () => {
     console.log(taskobj.tartgetTask)
@@ -173,6 +176,19 @@ function saveTodoLocalstorage(todo) {
     localStorage.setItem('todos', JSON.stringify(todos))
 
 }
+// function editsavelocalstorage(newtodo){
+//     let todos;
+
+
+//     if (localStorage.getItem('todos') === null) {
+//         todos = [];
+
+//     } else {
+//         todos = JSON.parse(localStorage.getItem('todos'))
+
+//     }
+
+// }
 function returnsavedtodofromLocalstorage() {
     let todos;
 
