@@ -13,7 +13,6 @@ const edit = document.querySelector(".edit")
 const edit_input = document.querySelector(".edit input");
 const btn_save = document.querySelector(".edit button");
 const gray = document.querySelector(".gray")
-const arrTasks = [];
 
 let numberleftTasks = 0;
 let numbercompleteTasks = 0;
